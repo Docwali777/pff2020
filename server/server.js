@@ -1,4 +1,4 @@
-import express from 'express'
+const express = require('express')
 const app = express()
 const PORT = 3000
 const { graphqlHTTP }  = require('express-graphql')
@@ -13,7 +13,7 @@ schema,
 graphiql: true
 }))
 
-import('./MONGO/connect')
+require('./MONGO/connect')
 
 
   // https.createServer({
