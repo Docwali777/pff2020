@@ -1,7 +1,9 @@
 const mongoose = require('mongoose')
 
+const MONGO_USERNAME = process.env.MONGO_USERNAME
+const MONGO_PASSWORD = process.env.MONGO_PASSWORD
 
-const MONGO_URI = "mongodb://wali1:wali123@ds235411.mlab.com:35411/funandfit"
+const MONGO_URI = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@ds235411.mlab.com:35411/funandfit`
 
 
 mongoose.connect(MONGO_URI, { 

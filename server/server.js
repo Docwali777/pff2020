@@ -1,10 +1,22 @@
 const express = require('express')
 const app = express()
-const PORT = 3000
+
+const Woodbridge = "10.204.1.130"
+const Annandale = "192.168.4.28"
+
+var IP_ADDRESS = Annandale 
+
+//process.env
+const PORT = process.env.PORT  || 3000
+const IP4 = process.env.IP4 || IP_ADDRESS
+
+
+
 const { graphqlHTTP }  = require('express-graphql')
 var fs = require('fs')
 const https = require('https')
 
+console.log(process.env.PORT);
 //schemas
 const schema = require('./GrapqQL_Schemas/rootSchema')
 
@@ -21,16 +33,13 @@ require('./MONGO/connect')
   //   cert: fs.readFileSync('server.cert')
   // })
 
-const Woodbridge = "10.204.1.130"
-const Annandale = "192.168.4.28"
 
-var IP_ADDRESS = Annandale 
  
 
 app.listen(PORT, Annandale , (e)=>{
         console.log(
             `Server conneted to {
-                http://${Annandale}:${PORT}/graphql
+                http://${IP4}:${PORT}/graphql
             }`
         );
      })
