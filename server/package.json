@@ -17,7 +17,7 @@
     "mongoose": "^5.9.28"
   },
   "scripts": {
-    "dev": "nodemon -r esm apollo.config.js",
+    "dev": "nodemon server.js",
     "build": "babel server.js -d lib",
     "babel-node": "babel-node "
   },

@@ -8,7 +8,7 @@ var IP_ADDRESS = Annandale
 
 //process.env
 const PORT = process.env.PORT  || 3000
-const IP4 = process.env.IP4 || IP_ADDRESS
+const IP4 = "142.93.9.196:8080"
 
 
 
@@ -36,11 +36,12 @@ require('./MONGO/connect')
 
  
 
-app.listen(PORT, Annandale , (e)=>{
+app.listen(8080, "142.93.9.196" , (e)=>{
         console.log(
             `Server conneted to {
-                http://${IP4}:${PORT}/graphql
+                http://142.93.9.196:8080/graphql
             }`
         );
      })
   
+console.log(process.env.PORT);
